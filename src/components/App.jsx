@@ -11,6 +11,8 @@ function App() {
 
   const [characters, setCharacters] = useState([])//para guardar el Array de la API
   const [filterName, setFilterName] = useState("") //para guardar el Filter por nombre
+  const [filterHouse, setFilterHouse] = useState("All")
+
   {/*Para controlar las peticiones del servidor hay que hacer un USE EFFECT= FUNCIÓN + ARRAY */ }
   useEffect(() => {
     {/*AL OBTENER LOS DATOS DE LA API RECIBIMOS UNA PROMESA, POR ESO USAMOS THEN */ }
@@ -28,10 +30,22 @@ function App() {
     setFilterName(value)
   }
 
+  //Para obtener valor del filtro por casa
+  const handleFilterHouse = (value) => {
+    setFilterHouse(value)
+  }
+
 
   //FILTRO
   const filteredCharacters = characters
     .filter((character) => character.name.toLowerCase().includes(filterName))
+    .filter((character) => {
+      if (filterHouse === character.house) {
+        return character.house
+      } else if (filterHouse === "All") {
+        return true
+      }
+    })
   // .filter((character) => {
   //   if (filterGender === "female") {
   //     return character.gender === "female"
@@ -50,6 +64,7 @@ function App() {
 
       <Filters
         filterName={filterName} handleFilterName={handleFilterName}
+        filterHouse={filterHouse} handleFilterHouse={handleFilterHouse}
 
       />
 

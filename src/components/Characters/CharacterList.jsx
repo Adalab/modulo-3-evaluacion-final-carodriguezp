@@ -17,7 +17,7 @@ function CharacterList({ characters }) {
     return (
         <section className="">
 
-            <h2 className="">Lista de personajes</h2>
+            <h2 className="">List of Characters</h2>
 
             <ul className="list" >
                 {renderCharacters}
