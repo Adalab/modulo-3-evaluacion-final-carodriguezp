@@ -1,1 +1,27 @@
-@import 'core/reset'
+@import 'core/reset';
+
+.img {
+    width: 150px;
+    height: 210px;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &-card {
+        background-color: palegoldenrod;
+        border: 5px solid palegoldenrod;
+        margin: 10px 0px 5px 0px;
+
+        &-div {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+    }
+}
