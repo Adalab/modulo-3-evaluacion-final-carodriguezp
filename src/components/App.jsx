@@ -1,8 +1,10 @@
 import '../style/App.scss'
 import { useEffect, useState } from 'react';
+import { Route, Routes, matchPath, useLocation } from 'react-router-dom';
 import getDataFromApi from "../services/api";
 import CharacterList from './Characters/CharacterList';
 import Filters from './Filters/Filters';
+import CharacterDetail from './Characters/CharacterDetail';
 //import PropTypes from "prop-types";
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
 
   const [characters, setCharacters] = useState([])//para guardar el Array de la API
   const [filterName, setFilterName] = useState("") //para guardar el Filter por nombre
-  const [filterHouse, setFilterHouse] = useState("All")
+  const [filterHouse, setFilterHouse] = useState("Gryffindor")
 
   {/*Para controlar las peticiones del servidor hay que hacer un USE EFFECT= FUNCIÓN + ARRAY */ }
   useEffect(() => {
@@ -35,10 +37,25 @@ function App() {
     setFilterHouse(value)
   }
 
+  //para cerrar characterDetail
+
+  const handleClick = () => {
+
+  }
+
 
   //FILTRO
   const filteredCharacters = characters
-    .filter((character) => character.name.toLowerCase().includes(filterName))
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName)
+      // if () {
+      //   return character;
+      // } else {
+      //   setResultSearch(`No hay ningún personaje que coincida con la palabra ${character.name}`);
+      // }
+    })
+
+
     .filter((character) => {
       if (filterHouse === character.house) {
         return character.house
@@ -56,23 +73,44 @@ function App() {
   //   }
   // })
 
+  const hasFiltered = !!filteredCharacters.length
 
+  {/*RUTAS PATH DETAIL */ }
+
+  const { pathname } = useLocation(); //pathname es la propiedad de la info de la ruta, hacemos destructuring
+
+  const routeData = matchPath("/character/:idCharacter", pathname)
+
+  //PASO 2 sacamos el id del usuario
+  const idCharacter = routeData !== null ? routeData.params.idCharacter : null
+
+  //PASO 3
+  const characterData = characters.find((character) => character.id === idCharacter);
 
   return (
-    <>
+    <main className='container'>
       <h1>Web Harry Potter </h1>
 
-      <Filters
-        filterName={filterName} handleFilterName={handleFilterName}
-        filterHouse={filterHouse} handleFilterHouse={handleFilterHouse}
+      {/*RUTAS */}
 
-      />
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Filters
+              filterName={filterName} handleFilterName={handleFilterName} hasFiltered={hasFiltered}
+              filterHouse={filterHouse} handleFilterHouse={handleFilterHouse}
 
-      <CharacterList characters={filteredCharacters} />
+            />
+
+            <CharacterList characters={filteredCharacters} />
+          </>
+        }
+        />
 
 
-
-    </>
+        <Route path='/character/:idCharacter' element={<CharacterDetail character={characterData} handleClick={handleClick} />} />
+      </Routes>
+    </main>
   );
 }
 

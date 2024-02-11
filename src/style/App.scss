@@ -1,5 +1,9 @@
 @import 'core/reset';
 
+.container {
+    background: linear-gradient(80deg, #0b7196 50%, #0d3645 80%)
+}
+
 .img {
     width: 150px;
     height: 210px;
@@ -23,5 +27,20 @@
             align-items: center;
             gap: 3px;
         }
+    }
+}
+
+.background-detail {
+
+    background-image: url("https://www.hyperhype.es/wp-content/uploads/2018/05/top.jpg");
+
+
+
+    p {
+        color: white;
+    }
+
+    i {
+        color: white;
     }
 }
