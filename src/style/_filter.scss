@@ -26,6 +26,29 @@
             flex-direction: row;
 
         }
+
+        .error {
+            padding: 15px;
+            color: orangered;
+            z-index: 1;
+            position: absolute;
+            margin-top: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: white;
+            border-radius: 15px;
+            top: 250px;
+            right: 10%;
+            text-align: center;
+            margin-left: 37px;
+
+            @media all and (min-width: 780px) {
+                font-size: 1.3rem;
+                right: 27%;
+                top: 215px;
+
+            }
+        }
     }
 
 

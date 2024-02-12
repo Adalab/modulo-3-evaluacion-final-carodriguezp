@@ -37,22 +37,11 @@ function App() {
     setFilterHouse(value)
   }
 
-  //para cerrar characterDetail
-
-  const handleClick = () => {
-
-  }
-
-
   //FILTRO
   const filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName)
-      // if () {
-      //   return character;
-      // } else {
-      //   setResultSearch(`No hay ningún personaje que coincida con la palabra ${character.name}`);
-      // }
+
     })
 
 
@@ -63,15 +52,6 @@ function App() {
         return true
       }
     })
-  // .filter((character) => {
-  //   if (filterGender === "female") {
-  //     return character.gender === "female"
-  //   } else if (filterGender === "male") {
-  //     return character.gender === "male"
-  //   } else {
-  //     return true //para que devuelva a todo el mundo
-  //   }
-  // })
 
   const hasFiltered = !!filteredCharacters.length
 
@@ -109,7 +89,7 @@ function App() {
         />
 
 
-        <Route path='/character/:idCharacter' element={<CharacterDetail character={characterData} handleClick={handleClick} />} />
+        <Route path='/character/:idCharacter' element={<CharacterDetail character={characterData} />} />
       </Routes>
     </main>
   );
