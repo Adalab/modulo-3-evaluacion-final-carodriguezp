@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function Filters({ filterName, handleFilterName, filterHouse, handleFilterHouse }) {
     return (
-        <form>
+        <form className="form">
             <FilterByName filterName={filterName} handleFilterName={handleFilterName} />
             <FilterByHouse filterHouse={filterHouse} handleSelectHouse={handleFilterHouse} />
         </form>

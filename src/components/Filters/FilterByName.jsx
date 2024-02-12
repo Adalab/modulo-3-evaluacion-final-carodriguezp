@@ -5,10 +5,10 @@ function FilterByName({ filterName, handleFilterName, hasFiltered }) {
 
 
     return (
-        <div className="">
+        <div className="form-div">
             <label htmlFor="">Search for character</label>
 
-            <input type="text" name="" id="" placeholder="Harry Potter" value={filterName} onChange={(ev) => handleFilterName(ev.target.value)} />
+            <input className="form-name-input" type="text" name="" id="" placeholder="Harry Potter" value={filterName} onChange={(ev) => handleFilterName(ev.target.value)} />
 
             {(!hasFiltered && filterName) && <p>No hay ningún personaje que coincida con la palabra {filterName}</p>}
         </div>

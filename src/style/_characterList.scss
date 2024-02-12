@@ -1,0 +1,33 @@
+.container-character {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    h2 {
+        font-weight: bold;
+        font-family: "Benne", serif;
+        text-transform: capitalize;
+        color: white;
+        display: flex;
+        justify-content: center;
+        font-size: 1.6rem;
+        padding: 40px 0px 20px;
+        text-shadow: #ebc150 1px 0 10px;
+
+        @media all and (min-width: 780px) {
+
+            font-size: 3rem;
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 90%;
+    }
+}

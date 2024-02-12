@@ -1,0 +1,64 @@
+.background-detail {
+
+
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+
+    .fa-square-xmark {
+        color: white;
+        font-size: 1.5rem;
+        text-shadow: #ebc150 1px 0 10px;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 2px;
+    }
+
+    &-div {
+        background-image: url("https://www.hyperhype.es/wp-content/uploads/2018/05/top.jpg");
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media all and (min-width: 780px) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+
+        img {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            padding-top: 20px;
+
+            @media all and (min-width: 780px) {
+                width: 300px;
+            }
+
+        }
+
+        &-section {
+            font-size: 1.6rem;
+            padding-top: 10px;
+
+            p {
+                padding-bottom: 5px;
+                font-family: "Benne", serif;
+                text-transform: capitalize;
+
+                @media all and (min-width: 780px) {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+p {
+    color: white;
+}

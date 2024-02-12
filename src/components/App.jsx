@@ -89,8 +89,9 @@ function App() {
 
   return (
     <main className='container'>
-      <h1>Web Harry Potter </h1>
 
+
+      <h1>Harry potter</h1>
       {/*RUTAS */}
 
       <Routes>

@@ -13,12 +13,11 @@ function CharacterDetail({ character }) {
         icon = "fa-heart-pulse";
     } else {
         isAlive = "Dead";
-        icon = "fa-heart-skull";
+        icon = "fa-skull";
     }
 
     return (
         <div className="background-detail" >
-            <img src="https://i.pngimg.me/thumb/f/720/m2H7G6H7Z5H7K9Z5.jpg" alt="" />
 
             <Link to={`/`} >
                 <i className="fa-solid fa-square-xmark"></i>

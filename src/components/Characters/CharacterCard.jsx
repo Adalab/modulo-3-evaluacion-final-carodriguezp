@@ -9,8 +9,8 @@ function CharacterCard({ character }) {
 
     return (
         <div className="list-card-div">
-            <img className="img" src={character.image} alt={character.name} />
-            <h4>{character.name}</h4>
+            <img className="list-card-div-img" src={character.image} alt={character.name} />
+            <h3>{character.name}</h3>
             <p>{character.specie}</p>
             <p>{character.gender}</p>
             <p>{character.house}</p>

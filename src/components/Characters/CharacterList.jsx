@@ -15,11 +15,11 @@ function CharacterList({ characters }) {
     })
 
     return (
-        <section className="">
+        <section className="container-character">
 
             <h2 className="">List of Characters</h2>
 
-            <ul className="list" >
+            <ul className="container-character-list" >
                 {renderCharacters}
             </ul>
 

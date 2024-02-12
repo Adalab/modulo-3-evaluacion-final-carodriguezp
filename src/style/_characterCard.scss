@@ -1,0 +1,40 @@
+.list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &-card {
+        background-color: #ebc150;
+        border: 5px solid #ebc150;
+        margin: 10px 0px 5px 0px;
+
+        &-div {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+
+            &-img {
+                width: 150px;
+                height: 210px;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                font-weight: bold;
+                font-family: "Benne", serif;
+                text-transform: capitalize;
+                padding: 3px;
+            }
+
+            p {
+                font-size: 1rem;
+                text-transform: capitalize;
+                font-family: "Benne", serif;
+                padding-bottom: 3px;
+            }
+        }
+    }
+}

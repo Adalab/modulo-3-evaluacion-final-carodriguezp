@@ -8,7 +8,7 @@ function FilterByCharacter({ filterHouse, handleSelectHouse }) {
   }
 
   return (
-    <div className="">
+    <div className="form-div">
       <label htmlFor="House">Select House of Howarts</label>
 
       <select
