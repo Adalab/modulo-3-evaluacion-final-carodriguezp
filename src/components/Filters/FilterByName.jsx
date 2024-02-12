@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 
 function FilterByName({ filterName, handleFilterName, hasFiltered }) {
 
-
-
     return (
         <div className="form-div">
             <label htmlFor="">Search for character</label>

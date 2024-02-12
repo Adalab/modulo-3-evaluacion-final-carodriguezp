@@ -40,7 +40,7 @@ function App() {
   //FILTRO
   const filteredCharacters = characters
     .filter((character) => {
-      return character.name.toLowerCase().includes(filterName)
+      return character.name.toLowerCase().includes(filterName.toLowerCase())
 
     })
 
