@@ -6,13 +6,13 @@ function CharacterDetail({ character }) {
 
 
     let icon = "";
-    let isAlive = "";
+    let isStudent = "";
 
-    if (character.alive) {
-        isAlive = "Alive";
+    if (character.student) {
+        isStudent = "Student";
         icon = "fa-heart-pulse";
     } else {
-        isAlive = "Dead";
+        isStudent = "Not Student";
         icon = "fa-skull";
     }
 
@@ -24,14 +24,12 @@ function CharacterDetail({ character }) {
             </Link>
 
             <div className="background-detail-div">
-                <img className="img" src={character.image} alt={character.name} />
+                <img className="img" src={character.image} alt={character.personaje} />
                 <section className="background-detail-div-section">
-                    <p>{character.name}</p>
-                    <p>{isAlive} <i className={`fa-solid ${icon}`}></i> </p>
-
-                    <p>{character.specie}</p>
-                    <p>{character.gender}</p>
+                    <p>{character.personaje}</p>
+                    <p>{isStudent} <i className={`fa-solid ${icon}`}></i> </p>
                     <p>{character.house}</p>
+                    <p>Descendants: {character.sons}</p>
                 </section>
             </div>
         </div>

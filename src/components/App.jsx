@@ -65,7 +65,14 @@ function App() {
   const idCharacter = routeData !== null ? routeData.params.idCharacter : null
 
   //PASO 3
-  const characterData = characters.find((character) => character.id === idCharacter);
+  const characterData = characters.find((character) => {
+
+
+    console.log(character, idCharacter)
+
+    return character.id === parseInt(idCharacter)
+  });
+  // console.log('hola', characters, idCharacter, characterData)
 
   return (
     <main className='container'>

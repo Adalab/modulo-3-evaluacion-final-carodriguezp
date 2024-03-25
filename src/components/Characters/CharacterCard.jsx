@@ -6,13 +6,14 @@ function CharacterCard({ character }) {
 
         character.image = 'https://placehold.co/150x200?text=Not+Found';
     }
+    //condicional estudiante
+    character.estudianteDeHogwarts ? character.estudianteDeHogwarts = 'Student' : character.estudianteDeHogwarts = 'Not student'
 
     return (
         <div className="list-card-div">
             <img className="list-card-div-img" src={character.image} alt={character.name} />
             <h3>{character.name}</h3>
-            <p>{character.specie}</p>
-            <p>{character.gender}</p>
+            <p>{character.estudianteDeHogwarts}</p>
             <p>{character.house}</p>
         </div>
     )
