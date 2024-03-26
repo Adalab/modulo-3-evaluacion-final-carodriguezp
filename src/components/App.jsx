@@ -13,7 +13,7 @@ function App() {
 
   const [characters, setCharacters] = useState([])//para guardar el Array de la API
   const [filterName, setFilterName] = useState("") //para guardar el Filter por nombre
-  const [filterHouse, setFilterHouse] = useState("Gryffindor")
+  const [filterHouse, setFilterHouse] = useState("All")
 
   {/*Para controlar las peticiones del servidor hay que hacer un USE EFFECT= FUNCIÓN + ARRAY */ }
   useEffect(() => {
@@ -66,9 +66,6 @@ function App() {
 
   //PASO 3
   const characterData = characters.find((character) => {
-
-
-    console.log(character, idCharacter)
 
     return character.id === parseInt(idCharacter)
   });
