@@ -17,12 +17,12 @@
 
     &-div {
         background-image: url("https://www.hyperhype.es/wp-content/uploads/2018/05/top.jpg");
-        height: 80%;
+        height: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        @media all and (min-width: 780px) {
+        @media all and (min-width: 768px) {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -37,7 +37,7 @@
             margin-top: 20px;
             box-shadow: #ebc150 1px 0 48px;
 
-            @media all and (min-width: 780px) {
+            @media all and (min-width: 768px) {
                 width: 300px;
             }
 
@@ -52,10 +52,34 @@
                 font-family: "Benne", serif;
                 text-transform: capitalize;
 
-                @media all and (min-width: 780px) {
+                @media all and (min-width: 768px) {
                     font-size: 2.5rem;
                 }
             }
+        }
+    }
+}
+
+.descendant {
+    font-family: "Benne", serif;
+    text-transform: capitalize;
+    color: white;
+    padding-bottom: 10px;
+    font-size: 1.6rem;
+
+    @media all and (min-width: 768px) {
+        font-size: 2.5rem;
+
+    }
+
+    li {
+
+        font-size: 1.3rem;
+        padding: 10px 0px 5px 20px;
+
+        @media all and (min-width: 768px) {
+            font-size: 1.6rem;
+            padding: 10px 0px 15px 30px;
         }
     }
 }
