@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import CharacterDescendants from "./CharacterDescendants";
 
 
 function CharacterDetail({ character }) {
@@ -8,13 +9,15 @@ function CharacterDetail({ character }) {
     let icon = "";
     let isStudent = "";
 
+
     if (character.student) {
         isStudent = "Student";
-        icon = "fa-heart-pulse";
+        icon = "fa-graduation-cap";
     } else {
         isStudent = "Not Student";
-        icon = "fa-skull";
+        icon = "fa-wand-magic-sparkles";
     }
+
 
     return (
         <div className="background-detail" >
@@ -24,12 +27,12 @@ function CharacterDetail({ character }) {
             </Link>
 
             <div className="background-detail-div">
-                <img className="img" src={character.image} alt={character.personaje} />
+                <img className="img" src={character.image} alt={character.name} />
                 <section className="background-detail-div-section">
-                    <p>{character.personaje}</p>
+                    <p>{character.name}</p>
                     <p>{isStudent} <i className={`fa-solid ${icon}`}></i> </p>
                     <p>{character.house}</p>
-                    <p>Descendants: {character.sons}</p>
+                    <CharacterDescendants character={character} />
                 </section>
             </div>
         </div>
