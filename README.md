@@ -1,5 +1,3 @@
-[link web](https://carodriguezp.github.io/practice-sports-website/)
-
 # Harry-Potter-website
 
 ## Description
@@ -78,18 +76,22 @@ src
 
  ├─ components
  |  ├─Characters
- |  |    ├─characterCard
- |  |    ├─characterDetail
- |  |    └─characterList
+ |  |    ├─CharacterCard
+ |  |    ├─CharacterDescendants
+ |  |    ├─CharacterDetail
+ |  |    └─CharacterList
  |  |
  |  ├─ Filters
- |  |     ├─filterByHouse
- |  |     ├─filterByName
+ |  |     ├─FilterByHouse
+ |  |     ├─FilterByName
  |  |     └─Filters
- |  └─ App
+ |  ├─ App
+ |  ├─ Footer
+ |  └─ LoadingState
  ├─ images
  ├─ services
- |  └─ api.js
+ |  ├─ api.js
+ |  └─ localStorage.js
  ├─ style
  |  ├─core
  |  |  └─ reset
@@ -97,27 +99,35 @@ src
  |  ├─ characterDetail
  |  ├─ characterList
  |  ├─ filter
+ |  ├─ footer
+ |  ├─ loadingState
  |  └─ App
  └─ main 
-    
 
 ```
-##Screenshots
+## Screenshots
 
-####Mobile version
+#### Mobile version
 
 ![Alt text](./public/img1.png)
-![Alt text](./public/img2.png)
 ![Alt text](./public/img1.1.png)
-![Alt text](./public/img2.1.png)
-![Alt text](./public/img5.png)
-
-####Tablet and desktop version
-
+![Alt text](./public/img2.png)
+![Alt text](./public/img6.1.png)
 ![Alt text](./public/img3.png)
+
+#### Tablet version
+
+
+![Alt text](./public/img5.png)
+![Alt text](./public/img5.1.png)
+![Alt text](./public/img5.2.png)
+
+#### Desktop version
+
 ![Alt text](./public/img4.png)
-![Alt text](./public/img7.png)
+![Alt text](./public/img4.1.png)
 ![Alt text](./public/img6.png)
+![Alt text](./public/img4.2.png)
 
 ## Licence
 
