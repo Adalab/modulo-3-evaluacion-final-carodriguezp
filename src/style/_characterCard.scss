@@ -8,6 +8,7 @@
         background-color: #ebc150;
         border: 5px solid #ebc150;
         margin: 10px 0px 5px 0px;
+        width: 160px;
 
         &:hover {
             box-shadow: #ebc150 2px 0 10px;
@@ -30,6 +31,7 @@
                 font-weight: bold;
                 font-family: "Benne", serif;
                 text-transform: capitalize;
+                text-align: center;
                 padding: 3px;
             }
 

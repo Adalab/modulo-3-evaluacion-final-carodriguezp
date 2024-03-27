@@ -1,7 +1,7 @@
 .background-detail {
 
 
-    height: 100vh;
+    height: 100%;
     width: 90%;
     margin: 0 auto;
 
@@ -17,10 +17,12 @@
 
     &-div {
         background-image: url("https://www.hyperhype.es/wp-content/uploads/2018/05/top.jpg");
-        height: 90%;
+        height: fit-content;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 20px;
 
         @media all and (min-width: 768px) {
             display: flex;
@@ -45,7 +47,7 @@
 
         &-section {
             font-size: 1.6rem;
-            padding-top: 10px;
+            padding: 10px;
 
             p {
                 padding-bottom: 5px;
