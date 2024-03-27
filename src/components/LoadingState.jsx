@@ -3,7 +3,9 @@
 function LoadingState() {
 
     return (
-        <div className="spinner"></div>
+        <div className="container-loading">
+            <div className="spinner"></div>
+        </div>
     )
 }
 
