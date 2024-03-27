@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 function CharacterDescendants({ character }) {
-    console.log(character.sons[1])
 
 
     if (character.sons.length === 0) {
