@@ -1,10 +1,12 @@
-import '../style/App.scss'
+
 import { useEffect, useState } from 'react';
-import { Route, Routes, matchPath, useLocation } from 'react-router-dom';
-import getDataFromApi from "../services/api";
+import { Route, Routes } from 'react-router-dom';
+
 import CharacterList from './Characters/CharacterList';
 import Filters from './Filters/Filters';
 import CharacterDetail from './Characters/CharacterDetail';
+import { getDataFromApi } from "../services/api";
+import '../style/App.scss';
 //import PropTypes from "prop-types";
 
 function App() {
@@ -55,21 +57,20 @@ function App() {
 
   const hasFiltered = !!filteredCharacters.length
 
-  {/*RUTAS PATH DETAIL */ }
+  // {/*RUTAS PATH DETAIL */ }
 
-  const { pathname } = useLocation(); //pathname es la propiedad de la info de la ruta, hacemos destructuring
+  // const { pathname } = useLocation(); //pathname es la propiedad de la info de la ruta, hacemos destructuring
 
-  const routeData = matchPath("/character/:idCharacter", pathname)
+  // const routeData = matchPath("/character/:idCharacter", pathname)
 
-  //PASO 2 sacamos el id del usuario
-  const idCharacter = routeData !== null ? routeData.params.idCharacter : null
+  // //PASO 2 sacamos el id del usuario
+  // const idCharacter = routeData !== null ? routeData.params.idCharacter : null
 
   //PASO 3
-  const characterData = characters.find((character) => {
+  // const characterData = characters.find((character) => {
 
-    return character.id === parseInt(idCharacter)
-  });
-  // console.log('hola', characters, idCharacter, characterData)
+  //   return character.id === parseInt(idCharacter)
+  // });
 
   return (
     <main className='container'>
@@ -93,7 +94,7 @@ function App() {
         />
 
 
-        <Route path='/character/:idCharacter' element={<CharacterDetail character={characterData} />} />
+        <Route path='/character/:idCharacter' element={<CharacterDetail />} />
       </Routes>
     </main>
   );

@@ -21,4 +21,22 @@ const getDataFromApi = () => {
         });
 };
 
-export default getDataFromApi
+
+const getDataByIdFromApi = (id) => {
+
+    return fetch(`https://harry-potter-api.onrender.com/personajes/${id}`)
+        .then(response => response.json())
+        .then((character) => {
+            return {
+                image: character.imagen,
+                name: character.personaje,
+                student: character.estudianteDeHogwarts, //NUEVO
+                house: character.casaDeHogwarts,
+                id: character.id,
+                sons: character.hijos //NUEVO
+            };
+        });
+
+};
+
+export { getDataFromApi, getDataByIdFromApi }
