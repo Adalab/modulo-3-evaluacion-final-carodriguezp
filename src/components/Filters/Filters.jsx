@@ -1,6 +1,8 @@
+import PropTypes from "prop-types";
+
 import FilterByName from "./FilterByName";
 import FilterByHouse from "./FilterByHouse";
-import PropTypes from "prop-types";
+
 
 function Filters({ filterName, handleFilterName, hasFiltered, filterHouse, handleFilterHouse }) {
     return (

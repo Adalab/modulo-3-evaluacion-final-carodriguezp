@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { Link, matchPath, useLocation } from "react-router-dom";
+
 import CharacterDescendants from "./CharacterDescendants";
-import { getDataByIdFromApi } from "../../services/api";
 import LoadingState from "../LoadingState";
+import { getDataByIdFromApi } from "../../services/api";
 
 
 function CharacterDetail() {

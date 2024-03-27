@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
-import CharacterCard from "./CharacterCard";
 import PropTypes from "prop-types";
 
+import CharacterCard from "./CharacterCard";
+
+
 function CharacterList({ characters }) {
+
+
     {/*Vamos a hacer el MAP de cada usuario (li) en la función rendercharacters */ }
 
     const renderCharacters = characters.map((character) => {
@@ -15,6 +19,7 @@ function CharacterList({ characters }) {
     })
 
     return (
+
         <section className="container-character">
 
             <h2 className="">List of Characters</h2>
