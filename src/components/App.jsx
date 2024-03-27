@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import CharacterList from './Characters/CharacterList';
 import Filters from './Filters/Filters';
 import CharacterDetail from './Characters/CharacterDetail';
+import Footer from './Footer';
 import LoadingState from "./LoadingState";
 import { getDataFromApi } from "../services/api";
 import '../style/App.scss';
@@ -85,6 +86,7 @@ function App() {
 
           <Route path='/character/:idCharacter' element={<CharacterDetail />} />
         </Routes>
+        <Footer />
       </main>
   );
 }
