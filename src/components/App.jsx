@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import CharacterList from './Characters/CharacterList';
 import Filters from './Filters/Filters';
 import CharacterDetail from './Characters/CharacterDetail';
+import LoadingState from "./LoadingState";
 import { getDataFromApi } from "../services/api";
 import '../style/App.scss';
 //import PropTypes from "prop-types";
@@ -16,12 +17,14 @@ function App() {
   const [characters, setCharacters] = useState([])//para guardar el Array de la API
   const [filterName, setFilterName] = useState("") //para guardar el Filter por nombre
   const [filterHouse, setFilterHouse] = useState("All")
+  const [isLoading, setIsLoading] = useState(true);
 
   {/*Para controlar las peticiones del servidor hay que hacer un USE EFFECT= FUNCIÓN + ARRAY */ }
   useEffect(() => {
     {/*AL OBTENER LOS DATOS DE LA API RECIBIMOS UNA PROMESA, POR ESO USAMOS THEN */ }
     getDataFromApi().then((cleanData) => {
       setCharacters(cleanData)
+      setIsLoading(false)
     })
 
   }, [])
@@ -37,15 +40,14 @@ function App() {
   //Para obtener valor del filtro por casa
   const handleFilterHouse = (value) => {
     setFilterHouse(value)
+
   }
 
   //FILTRO
   const filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLowerCase())
-
     })
-
 
     .filter((character) => {
       if (filterHouse === character.house) {
@@ -57,46 +59,34 @@ function App() {
 
   const hasFiltered = !!filteredCharacters.length
 
-  // {/*RUTAS PATH DETAIL */ }
-
-  // const { pathname } = useLocation(); //pathname es la propiedad de la info de la ruta, hacemos destructuring
-
-  // const routeData = matchPath("/character/:idCharacter", pathname)
-
-  // //PASO 2 sacamos el id del usuario
-  // const idCharacter = routeData !== null ? routeData.params.idCharacter : null
-
-  //PASO 3
-  // const characterData = characters.find((character) => {
-
-  //   return character.id === parseInt(idCharacter)
-  // });
 
   return (
-    <main className='container'>
+
+    isLoading ? <LoadingState /> :
+      <main className='container'>
 
 
-      <h1>Harry potter</h1>
-      {/*RUTAS */}
+        <h1>Harry potter</h1>
+        {/*RUTAS */}
 
-      <Routes>
-        <Route path='/' element={
-          <>
-            <Filters
-              filterName={filterName} handleFilterName={handleFilterName} hasFiltered={hasFiltered}
-              filterHouse={filterHouse} handleFilterHouse={handleFilterHouse}
+        <Routes>
+          <Route path='/' element={
+            <>
+              <Filters
+                filterName={filterName} handleFilterName={handleFilterName} hasFiltered={hasFiltered}
+                filterHouse={filterHouse} handleFilterHouse={handleFilterHouse}
 
-            />
+              />
 
-            <CharacterList characters={filteredCharacters} />
-          </>
-        }
-        />
+              <CharacterList characters={filteredCharacters} />
+            </>
+          }
+          />
 
 
-        <Route path='/character/:idCharacter' element={<CharacterDetail />} />
-      </Routes>
-    </main>
+          <Route path='/character/:idCharacter' element={<CharacterDetail />} />
+        </Routes>
+      </main>
   );
 }
 
